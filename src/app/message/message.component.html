@@ -1,0 +1,6 @@
+<ngb-toast
+  *ngFor="let toast of messageService.toasts"
+  [header]="toast.header" [autohide]="false" 
+  (hiddden)="messageService.remove(toast)"
+  class="position-absolute bottom-0 left-0 p-3 m-3"
+>{{toast.body}}</ngb-toast>

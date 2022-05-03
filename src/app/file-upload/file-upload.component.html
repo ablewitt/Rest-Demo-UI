@@ -1,0 +1,26 @@
+<div class="container-fluid row">
+  <div class="col-sm-6">
+    <form [formGroup]="uploadForm" (ngSubmit)="submit()">
+      <div class="mb-3 mt-3">
+        <label for="file" class="form-label">File:</label>
+        <input type="file" class="form-control" placeholder="Browse" name="file" (change)="onFileChange($event)">
+      </div>
+      <div class="mb-3">
+        <label for="Comment" class="form-label">Comment:</label>
+        <input type="text" class="form-control" placeholder="Enter comment" name="comment"
+          formControlName="commentField">
+      </div>
+      <button [ngClass]="uploadForm.valid? '': 'disabled'" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <div *ngIf="uploadMsg" class="col-sm-6">
+    <div class="card bg-light m-3" style="max-width: 18rem;">
+      <div class="card-header"><h4>{{uploadMsg.fileName}}</h4></div>
+      <div class="card-body">
+        <h5 class="card-title">Message</h5>
+        <p class="card-text">{{uploadMsg.comment}}</p>
+        <p class="card-text">Type: {{uploadMsg.fileType}} | Size: {{uploadMsg.fileSize}}</p>
+      </div>
+    </div>
+</div>

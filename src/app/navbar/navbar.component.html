@@ -1,0 +1,18 @@
+<div class="p-3">
+<ul ngbNav #nav="ngbNav" [activeId]="1" class="nav-tabs justify-content-center">
+
+  <li [ngbNavItem]="1">
+    <a ngbNavLink [routerLink]="['/upload']">File Upload</a>
+  </li>
+
+  <li ngbDropdown class="nav-item" [ngbNavItem]="2">
+    <a ngbNavLink href (click)="false" class="nav-link" ngbDropdownToggle>Greeting</a>
+    <div ngbDropdownMenu>
+      <button ngbDropdownItem [routerLink]="['/greeting']" >World</button>
+      <button ngbDropdownItem [routerLink]="['/greeting']" [queryParams]="{name: 'Fred'}">Fred</button>
+      <button ngbDropdownItem [routerLink]="['/greeting-post']" >POST</button>
+    </div>
+  </li>
+</ul>
+
+</div>
