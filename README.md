@@ -10,6 +10,3 @@ Style can be rebuilt using by editing `styles.scss` and compiling with sass.
 ### Compile
 `sass src/styles.scss src/styles.css`
 
-`
-
-
